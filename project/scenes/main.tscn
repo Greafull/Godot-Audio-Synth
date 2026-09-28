@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c34o8hqiwf5eo" path="res://scenes/prefabs/nodes_panel.tscn" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://bokgf0fes8dyg" path="res://scripts/classes/node_manager.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dgj3gtelx6teo" path="res://scenes/nodes/output.tscn" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dd8ujfdb6di2a" path="res://icon.svg" id="6_tefeu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nacwa"]
 font_size = 56
@@ -90,6 +91,10 @@ offset_right = 1645.0
 offset_bottom = 486.0
 mouse_filter = 1
 position_offset = Vector2(1581, 431)
+
+[node name="GDExample" type="GDExample" parent="." unique_id=705087694]
+position = Vector2(0.7495791, 3.6737614)
+texture = ExtResource("6_tefeu")
 
 [connection signal="connection_from_empty" from="GraphWindow/GraphEdit" to="GraphWindow/GraphEdit" method="_on_connection_from_empty"]
 [connection signal="connection_request" from="GraphWindow/GraphEdit" to="GraphWindow/GraphEdit" method="_on_connection_request"]

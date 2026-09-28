@@ -14,7 +14,7 @@ var audio_generator: AudioStreamGenerator
 
 func _ready() -> void:
 	var example_class: ExampleClass = ExampleClass.new()
-	example_class.print_type(audio_generator)
+	example_class.print_type(SAMPLE_RATE)
 	
 	audio_generator = AudioStreamGenerator.new()
 	audio_generator.mix_rate = SAMPLE_RATE
