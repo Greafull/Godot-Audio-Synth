@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NodeConnectionResource" format=3 uid="uid://cjcterd7byiwa"]
+
+[ext_resource type="Script" uid="uid://y1hm3i1f2iul" path="res://scripts/resources/node_connection_resource.gd" id="1_8d7sg"]
+
+[resource]
+script = ExtResource("1_8d7sg")
+name = "Input"
+id = &"in"
+metadata/_custom_type_script = "uid://y1hm3i1f2iul"

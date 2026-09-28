@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c34o8hqiwf5eo"]
+
+[ext_resource type="Script" uid="uid://cs6snxjy1shaw" path="res://scripts/classes/nodes_panel.gd" id="1_i2sv6"]
+[ext_resource type="Script" uid="uid://cwxgg1qm8lvd3" path="res://scripts/classes/node_button.gd" id="2_kb4fl"]
+[ext_resource type="PackedScene" uid="uid://c0620aftanftm" path="res://scenes/nodes/mixer.tscn" id="4_57e7p"]
+[ext_resource type="PackedScene" uid="uid://dvndeluydrwld" path="res://scenes/nodes/oscillator.tscn" id="4_w7yoi"]
+[ext_resource type="PackedScene" uid="uid://ca225kpwjdowo" path="res://scenes/nodes/note.tscn" id="5_57e7p"]
+
+[node name="NodesPanel" type="CanvasLayer" unique_id=1766797875]
+script = ExtResource("1_i2sv6")
+
+[node name="NodesPanel" type="Control" parent="." unique_id=243552039]
+layout_mode = 3
+anchor_right = 0.1736111
+anchor_bottom = 0.6234568
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="NodesPanel" unique_id=1510716634]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="NodesPanel" unique_id=51947644]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NodeButton4" type="Button" parent="NodesPanel/GridContainer" unique_id=1829952458]
+layout_mode = 2
+text = "Oscillator"
+script = ExtResource("2_kb4fl")
+node_scene = ExtResource("4_w7yoi")
+metadata/_custom_type_script = "uid://cwxgg1qm8lvd3"
+
+[node name="NodeButton5" type="Button" parent="NodesPanel/GridContainer" unique_id=976070941]
+layout_mode = 2
+text = "Mixer"
+script = ExtResource("2_kb4fl")
+node_scene = ExtResource("4_57e7p")
+metadata/_custom_type_script = "uid://cwxgg1qm8lvd3"
+
+[node name="NodeButton6" type="Button" parent="NodesPanel/GridContainer" unique_id=1996105033]
+layout_mode = 2
+text = "Note"
+script = ExtResource("2_kb4fl")
+node_scene = ExtResource("5_57e7p")
+metadata/_custom_type_script = "uid://cwxgg1qm8lvd3"

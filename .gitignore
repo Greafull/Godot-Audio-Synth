@@ -18,6 +18,10 @@ compile_commands.json
 # Ignore files generated for documentation
 /src/gen
 
+#ignore visual studio configs
+/.vs
+/.vscode
+
 # Binaries
 *.o
 *.os

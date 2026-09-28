@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgj3gtelx6teo"]
+
+[ext_resource type="Script" uid="uid://bxxbhxsqd4qjd" path="res://scripts/nodes/output.gd" id="1_l62rf"]
+[ext_resource type="Script" uid="uid://y1hm3i1f2iul" path="res://scripts/resources/node_connection_resource.gd" id="2_vwk7v"]
+
+[sub_resource type="Resource" id="Resource_ibfy6"]
+script = ExtResource("2_vwk7v")
+name = "Output"
+metadata/_custom_type_script = "uid://y1hm3i1f2iul"
+
+[node name="Output" type="GraphNode" unique_id=1892257858]
+offset_right = 64.0
+offset_bottom = 55.0
+title = "Output"
+script = ExtResource("1_l62rf")
+connections = Array[ExtResource("2_vwk7v")]([SubResource("Resource_ibfy6")])
+metadata/_custom_type_script = "uid://ddlh1h84oiglj"

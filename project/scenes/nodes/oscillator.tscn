@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dvndeluydrwld"]
+
+[ext_resource type="Script" uid="uid://ibv3hjegd1pr" path="res://scripts/nodes/oscillator.gd" id="1_hmv72"]
+[ext_resource type="Script" uid="uid://y1hm3i1f2iul" path="res://scripts/resources/node_connection_resource.gd" id="2_pw067"]
+
+[sub_resource type="Resource" id="Resource_3jmfn"]
+script = ExtResource("2_pw067")
+name = "Out"
+id = &"out"
+enable_left_port = false
+enable_right_port = true
+metadata/_custom_type_script = "uid://y1hm3i1f2iul"
+
+[sub_resource type="Resource" id="Resource_qkb5o"]
+script = ExtResource("2_pw067")
+name = "Frequency"
+id = &"freq"
+max_value = 100000.0
+default_value = 440.0
+input_type = 2
+metadata/_custom_type_script = "uid://y1hm3i1f2iul"
+
+[sub_resource type="Resource" id="Resource_nacwa"]
+script = ExtResource("2_pw067")
+name = "Amplitude"
+id = &"amp"
+max_value = 100.0
+default_value = 1.0
+input_type = 2
+metadata/_custom_type_script = "uid://y1hm3i1f2iul"
+
+[sub_resource type="Resource" id="Resource_u3755"]
+script = ExtResource("2_pw067")
+name = "Waveform"
+id = &"waveform"
+max_value = 2.0
+options = PackedStringArray("Sine", "Square", "Saw", "Noise")
+input_type = 3
+enable_left_port = false
+metadata/_custom_type_script = "uid://y1hm3i1f2iul"
+
+[node name="Oscillator" type="GraphNode" unique_id=1892257858]
+offset_right = 83.0
+offset_bottom = 55.0
+title = "Oscillator"
+script = ExtResource("1_hmv72")
+connections = Array[ExtResource("2_pw067")]([SubResource("Resource_3jmfn"), SubResource("Resource_qkb5o"), SubResource("Resource_nacwa"), SubResource("Resource_u3755")])
+metadata/_custom_type_script = "uid://ddlh1h84oiglj"
