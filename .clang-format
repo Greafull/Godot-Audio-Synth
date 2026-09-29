@@ -3,6 +3,7 @@
 # chosen value in case the base style changes (last sync: Clang 14.0).
 ---
 ### General config, applies to all languages ###
+# Generate compile_commands.json while compiling
 BasedOnStyle:  LLVM
 AccessModifierOffset: -4
 AlignAfterOpenBracket: DontAlign

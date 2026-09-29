@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\audio_engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\example_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\gdexample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\gen\doc_data.gen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\register_types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\build\gen\doc_source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\audio_engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\example_class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\gdexample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\src\register_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FB2ADF4B-51B0-3738-8D67-A24DED5DF207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B25D42E9-B054-3085-9FBC-FBB5F585D399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C79DAD00-F82E-3125-A038-F0738BA3D936}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

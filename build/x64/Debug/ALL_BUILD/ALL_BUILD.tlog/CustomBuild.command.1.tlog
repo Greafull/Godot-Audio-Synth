@@ -1,0 +1,10 @@
+^C:\USERS\MICMI\ONEDRIVE\DOCUMENTS\GODOT\GD_RECOMPILED\GODOT-CPP-TEMPLATE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template -BC:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build --check-stamp-file C:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

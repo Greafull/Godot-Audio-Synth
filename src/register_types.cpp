@@ -7,6 +7,8 @@
 
 #include "example_class.h"
 #include "gdexample.h"
+#include "audio_engine.h"
+
 
 using namespace godot;
 
@@ -15,8 +17,9 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	GDREGISTER_CLASS(ExampleClass);
-	GDREGISTER_CLASS(GDExample);
+	GDREGISTER_RUNTIME_CLASS(ExampleClass);
+	GDREGISTER_RUNTIME_CLASS(GDExample);
+	GDREGISTER_RUNTIME_CLASS(CAudioEngine);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

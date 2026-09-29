@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build/cmake_install.cmake",
+		"C:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build/godot-cpp/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

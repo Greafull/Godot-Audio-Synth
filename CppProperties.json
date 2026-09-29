@@ -1,0 +1,24 @@
+{
+	"configurations": [
+		{
+			"inheritEnvironments": [ "msvc_x64" ],
+			"name": "x64-Debug",
+			"includePath": [
+				"${env.INCLUDE}",
+				"${workspaceRoot}\\**"
+			],
+			"defines": [
+				"WIN32",
+				"_DEBUG",
+				"UNICODE",
+				"_UNICODE",
+				"WINDOWS_ENABLED",
+				"TYPED_METHOD_BIND",
+				"DEBUG_ENABLED",
+				"DEBUG_METHODS_ENABLED"
+			],
+			"intelliSenseMode": "windows-msvc-x64",
+			"compilerSwitches": "/std:c++17 /EHsc"
+		}
+	]
+}

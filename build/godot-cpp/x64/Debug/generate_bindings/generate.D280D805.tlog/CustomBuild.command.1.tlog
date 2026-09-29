@@ -1,0 +1,32 @@
+^C:\USERS\MICMI\ONEDRIVE\DOCUMENTS\GODOT\GD_RECOMPILED\GODOT-CPP-TEMPLATE\GODOT-CPP\GDEXTENSION\EXTENSION_API-4-7.JSON
+setlocal
+cd C:\Users\micmi\OneDrive\Documents\Godot\gd_recompiled\godot-cpp-template\godot-cpp
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Users\micmi\AppData\Local\Python\pythoncore-3.14-64\python.exe -c "from binding_generator import generate_bindings";"generate_bindings( api_filepath='gdextension/extension_api-4-7.json', interface_filepath='gdextension/gdextension_interface.json', use_template_get_node='True', bits='64', precision='single', output_dir='C:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build/godot-cpp', hooks_path='')"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\MICMI\ONEDRIVE\DOCUMENTS\GODOT\GD_RECOMPILED\GODOT-CPP-TEMPLATE\BUILD\CMAKEFILES\47FE637ABACC7D9E3C440B309DC36F5E\GENERATE_BINDINGS.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\MICMI\ONEDRIVE\DOCUMENTS\GODOT\GD_RECOMPILED\GODOT-CPP-TEMPLATE\GODOT-CPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template -BC:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build --check-stamp-file C:/Users/micmi/OneDrive/Documents/Godot/gd_recompiled/godot-cpp-template/build/godot-cpp/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
