@@ -1,4 +1,5 @@
 #include "audio_engine.h"
+#include "godot_cpp/core/object.hpp"
 
 namespace godot {
 

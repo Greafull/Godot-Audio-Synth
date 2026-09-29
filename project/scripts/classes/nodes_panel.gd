@@ -1,5 +1,4 @@
-extends CanvasLayer
-class_name NodesPanel
+extends NodesPanel
 
 @export var graph: GraphEdit
 

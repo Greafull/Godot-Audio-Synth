@@ -1,13 +1,12 @@
-#include "register_types.h"
-
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
-#include "example_class.h"
 #include "gdexample.h"
 #include "audio_engine.h"
+//#include "module_node.h"
+#include "nodes_panel.h"
 
 
 using namespace godot;
@@ -17,7 +16,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	GDREGISTER_RUNTIME_CLASS(ExampleClass);
+	//GDREGISTER_RUNTIME_CLASS(ModuleNode);
+	GDREGISTER_RUNTIME_CLASS(NodesPanel);
 	GDREGISTER_RUNTIME_CLASS(GDExample);
 	GDREGISTER_RUNTIME_CLASS(CAudioEngine);
 }

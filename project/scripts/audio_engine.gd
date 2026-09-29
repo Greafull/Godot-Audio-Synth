@@ -13,9 +13,6 @@ var playback: AudioStreamGeneratorPlayback
 var audio_generator: AudioStreamGenerator
 
 func _ready() -> void:
-	var example_class: ExampleClass = ExampleClass.new()
-	example_class.print_type(SAMPLE_RATE)
-	
 	audio_generator = AudioStreamGenerator.new()
 	audio_generator.mix_rate = SAMPLE_RATE
 	audio_generator.buffer_length = 0.1
@@ -49,7 +46,7 @@ func process_node(node: ModuleNode, num_samples: int) -> PackedFloat32Array:
 			continue
 		var source : ModuleNode = graph_editor.get_node(NodePath(str(connection["from_node"])))
 		inputs[port] = process_node(source, num_samples)
-	var output := node.update_sound(num_samples, SAMPLE_RATE, inputs)
+	var output : PackedFloat32Array = node.update_sound(num_samples, SAMPLE_RATE, inputs)
 	buffer_cache[node] = output
 	return output
 
