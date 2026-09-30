@@ -1,5 +1,8 @@
 #include "audio_engine.h"
+#include "godot_cpp/classes/global_constants.hpp"
 #include "godot_cpp/core/object.hpp"
+#include "godot_cpp/core/property_info.hpp"
+#include "godot_cpp/variant/variant.hpp"
 
 namespace godot {
 
@@ -7,15 +10,17 @@ const float SAMPLE_RATE = 44100.0;
 const int BUFFER_SIZE = 512;
 
 void CAudioEngine::_bind_methods() {
-	ClassDB::bind_method(D_METHOD("get_amplitude"), &CAudioEngine::get_amplitude);
-	ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &CAudioEngine::set_amplitude);
+	ADD_PROPERTY(
+		PropertyInfo(Variant::OBJECT, "graph_editor",
+		PROPERTY_HINT_NODE_TYPE, "CGraphEditor"),
+		"set_graph", "get_graph"
+	);
+	ClassDB::bind_method(D_METHOD("set_graph", "graph"), &CAudioEngine::set_graph);
+	ClassDB::bind_method(D_METHOD("get_graph"), &CAudioEngine::get_graph);
 
-	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
 }
 
 CAudioEngine::CAudioEngine() {
-	is_noob = true;
-	amplitude = 10.0;
 }
 
 CAudioEngine::~CAudioEngine() {
@@ -26,12 +31,12 @@ void CAudioEngine::_ready() {
 	print_line("ready");
 }
 
-void CAudioEngine::set_amplitude(const double p_amplitude) {
-	amplitude = p_amplitude;
+CGraphEditor *CAudioEngine::get_graph() {
+	return graph_editor;
 }
 
-double CAudioEngine::get_amplitude() const {
-	return amplitude;
+void CAudioEngine::set_graph(CGraphEditor *graph) {
+	graph_editor = graph;
 }
 
 }
