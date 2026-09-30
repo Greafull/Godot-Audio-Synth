@@ -31,16 +31,16 @@ void CAudioEngine::_bind_methods() {
 }
 
 CAudioEngine::CAudioEngine() {
-	audio_generator->set_mix_rate(SAMPLE_RATE);
+	/*audio_generator->set_mix_rate(SAMPLE_RATE);
 	audio_generator->set_buffer_length(0.1);
 
 	audio_player->set_stream(audio_generator);
 	audio_player->play();
-	playback = audio_player->get_stream_playback();
+	playback = audio_player->get_stream_playback();*/
 }
 
 CAudioEngine::~CAudioEngine() {
-	// Cleanup here.
+	//clean
 }
 
 void CAudioEngine::_ready() {
