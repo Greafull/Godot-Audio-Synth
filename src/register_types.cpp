@@ -17,8 +17,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	//GDREGISTER_RUNTIME_CLASS(ModuleNode);
-	GDREGISTER_RUNTIME_CLASS(CGraphEditor)
+	//GDREGISTER_RUNTIME_CLASS(CModuleNode);
+	GDREGISTER_RUNTIME_CLASS(CGraphEditor);
 	GDREGISTER_RUNTIME_CLASS(NodesPanel);
 	GDREGISTER_RUNTIME_CLASS(GDExample);
 	GDREGISTER_RUNTIME_CLASS(CAudioEngine);
