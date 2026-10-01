@@ -1,5 +1,4 @@
 #include "audio_engine.h"
-#include "godot_cpp/classes/audio_stream.hpp"
 #include "godot_cpp/classes/audio_stream_generator.hpp"
 #include "godot_cpp/classes/audio_stream_playback.hpp"
 #include "godot_cpp/classes/audio_stream_player.hpp"
@@ -8,7 +7,10 @@
 #include "godot_cpp/core/object.hpp"
 #include "godot_cpp/core/print_string.hpp"
 #include "godot_cpp/core/property_info.hpp"
+#include "godot_cpp/variant/packed_float32_array.hpp"
 #include "godot_cpp/variant/variant.hpp"
+#include "godot_cpp/variant/vector2.hpp"
+#include "module_node.h"
 
 namespace godot {
 
@@ -31,6 +33,14 @@ void CAudioEngine::_bind_methods() {
 		PROPERTY_HINT_NODE_TYPE, "AudioStreamPlayer"),
 		"set_audio_player", "get_audio_player"
 	);
+
+	ClassDB::bind_method(D_METHOD("set_output_node", "module_node"), &CAudioEngine::set_output_node);
+	ClassDB::bind_method(D_METHOD("get_output_node"), &CAudioEngine::get_output_node);
+	ADD_PROPERTY(
+		PropertyInfo(Variant::OBJECT, "output_node",
+		PROPERTY_HINT_NODE_TYPE, "CModuleNode"),
+		"set_output_node", "get_output_node"
+	);
 }
 
 CAudioEngine::CAudioEngine() {
@@ -50,6 +60,30 @@ void CAudioEngine::_ready() {
 	playback = audio_player->get_stream_playback();
 }
 
+void CAudioEngine::_process(double delta) {
+	if (playback.is_null()) {
+		print_line("null playback");
+		return;
+	}
+	while (playback->get_frames_available() >= BUFFER_SIZE) {
+		PackedFloat32Array buffer = _process_graph(BUFFER_SIZE);
+		for (float sample : buffer) {
+			playback->push_frame(Vector2(sample, sample));
+		}
+	}
+}
+
+PackedFloat32Array CAudioEngine::_process_graph(int num_samples) {
+	return _process_node(output_node, num_samples);
+}
+
+PackedFloat32Array CAudioEngine::_process_node(CModuleNode* node, int num_samples) {
+	PackedFloat32Array output = PackedFloat32Array();
+	output.resize(num_samples);
+	if (node == nullptr) return output;
+	return output;
+}
+
 CGraphEditor *CAudioEngine::get_graph() {
 	return graph_editor;
 }
@@ -64,6 +98,14 @@ AudioStreamPlayer *CAudioEngine::get_audio_player() {
 
 void CAudioEngine::set_audio_player(AudioStreamPlayer *audio_stream) {
 	audio_player = audio_stream;
+}
+
+CModuleNode *CAudioEngine::get_output_node() {
+	return output_node;
+}
+
+void CAudioEngine::set_output_node(CModuleNode *module_node) {
+	output_node = module_node;
 }
 
 }

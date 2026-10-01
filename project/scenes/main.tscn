@@ -18,8 +18,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0wfyh")
 
-[node name="CAudioEngine" type="CAudioEngine" parent="." unique_id=1893331765 node_paths=PackedStringArray("audio_player")]
+[node name="CAudioEngine" type="CAudioEngine" parent="." unique_id=1893331765 node_paths=PackedStringArray("graph_editor", "audio_player", "output_node")]
+graph_editor = NodePath("../CGraphEditor")
 audio_player = NodePath("../AudioStreamPlayer")
+output_node = NodePath("../CGraphEditor/CModuleNode")
+
+[node name="CGraphEditor" type="CGraphEditor" parent="." unique_id=1666374051]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CModuleNode" type="CModuleNode" parent="CGraphEditor" unique_id=156736105]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 55.0
+mouse_filter = 1
 
 [node name="AudioEngine" type="Control" parent="." unique_id=1356834646 node_paths=PackedStringArray("graph_editor", "output_node", "audio_player")]
 anchors_preset = 0

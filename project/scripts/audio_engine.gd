@@ -49,17 +49,3 @@ func process_node(node: ModuleNode, num_samples: int) -> PackedFloat32Array:
 	var output : PackedFloat32Array = node.update_sound(num_samples, SAMPLE_RATE, inputs)
 	buffer_cache[node] = output
 	return output
-
-func _process_node(node: ModuleNode, num_samples: int) -> PackedFloat32Array:
-	if node == null: return PackedFloat32Array()
-	if buffer_cache.has(node):
-		return buffer_cache[node]
-	var inputs := {}
-	for port in node.input_count():
-		var connection = graph_editor.find_connection_to(node, port)
-		if connection:
-			var source: ModuleNode = connection.source_node
-			inputs[port] = process_node(source, num_samples)
-	var output = node.update_sound(num_samples, SAMPLE_RATE, inputs)
-	buffer_cache[node] = output
-	return output

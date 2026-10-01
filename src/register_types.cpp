@@ -5,7 +5,7 @@
 
 #include "gdexample.h"
 #include "audio_engine.h"
-//#include "module_node.h"
+#include "module_node.h"
 #include "graph_editor.h"
 #include "nodes_panel.h"
 
@@ -17,7 +17,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	//GDREGISTER_RUNTIME_CLASS(CModuleNode);
+	GDREGISTER_RUNTIME_CLASS(CModuleNode);
 	GDREGISTER_RUNTIME_CLASS(CGraphEditor);
 	GDREGISTER_RUNTIME_CLASS(NodesPanel);
 	GDREGISTER_RUNTIME_CLASS(GDExample);
