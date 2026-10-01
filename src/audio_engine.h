@@ -19,8 +19,8 @@ private:
 	AudioStreamPlayer *audio_player = nullptr;
 
 	//HashMap<Node, PackedFloat32Array> buffer_cache;
-	//Ref<AudioStreamPlayback> playback;
-	//Ref<AudioStreamGenerator> audio_generator;
+	Ref<AudioStreamPlayback> playback;
+	Ref<AudioStreamGenerator> audio_generator;
 
 
 protected:

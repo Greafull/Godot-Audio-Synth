@@ -1,9 +1,12 @@
 #include "audio_engine.h"
+#include "godot_cpp/classes/audio_stream.hpp"
 #include "godot_cpp/classes/audio_stream_generator.hpp"
 #include "godot_cpp/classes/audio_stream_playback.hpp"
 #include "godot_cpp/classes/audio_stream_player.hpp"
 #include "godot_cpp/classes/global_constants.hpp"
+#include "godot_cpp/classes/ref.hpp"
 #include "godot_cpp/core/object.hpp"
+#include "godot_cpp/core/print_string.hpp"
 #include "godot_cpp/core/property_info.hpp"
 #include "godot_cpp/variant/variant.hpp"
 
@@ -31,20 +34,20 @@ void CAudioEngine::_bind_methods() {
 }
 
 CAudioEngine::CAudioEngine() {
-	/*audio_generator->set_mix_rate(SAMPLE_RATE);
-	audio_generator->set_buffer_length(0.1);
-
-	audio_player->set_stream(audio_generator);
-	audio_player->play();
-	playback = audio_player->get_stream_playback();*/
 }
 
 CAudioEngine::~CAudioEngine() {
-	//clean
 }
 
 void CAudioEngine::_ready() {
 	print_line("ready");
+	audio_generator.instantiate();
+	audio_generator->set_mix_rate(SAMPLE_RATE);
+	audio_generator->set_buffer_length(0.1);
+
+	audio_player->set_stream(audio_generator);
+	audio_player->play();
+	playback = audio_player->get_stream_playback();
 }
 
 CGraphEditor *CAudioEngine::get_graph() {
