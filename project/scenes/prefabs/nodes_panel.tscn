@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cwxgg1qm8lvd3" path="res://scripts/classes/node_button.gd" id="2_kb4fl"]
 [ext_resource type="PackedScene" uid="uid://c0620aftanftm" path="res://scenes/nodes/mixer.tscn" id="4_57e7p"]
 [ext_resource type="PackedScene" uid="uid://dvndeluydrwld" path="res://scenes/nodes/oscillator.tscn" id="4_w7yoi"]
-[ext_resource type="PackedScene" uid="uid://ca225kpwjdowo" path="res://scenes/nodes/note.tscn" id="5_57e7p"]
 
 [node name="NodesPanel" type="NodesPanel" unique_id=1561910118]
 script = ExtResource("1_i2sv6")
@@ -44,11 +43,4 @@ layout_mode = 2
 text = "Mixer"
 script = ExtResource("2_kb4fl")
 node_scene = ExtResource("4_57e7p")
-metadata/_custom_type_script = "uid://cwxgg1qm8lvd3"
-
-[node name="NodeButton6" type="Button" parent="NodesPanel/GridContainer" unique_id=1996105033]
-layout_mode = 2
-text = "Note"
-script = ExtResource("2_kb4fl")
-node_scene = ExtResource("5_57e7p")
 metadata/_custom_type_script = "uid://cwxgg1qm8lvd3"

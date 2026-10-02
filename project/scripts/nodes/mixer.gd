@@ -1,6 +1,6 @@
 extends ModuleNode
 
-var mixer_input : NodeConnectionResource = preload("uid://cjcterd7byiwa")
+var mixer_input : NodeConnectionResource = preload("uid://buy2w6ltmk0y0")
 var num_inputs : int = 0
 
 func _ready() -> void:

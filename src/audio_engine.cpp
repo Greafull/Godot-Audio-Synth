@@ -1,4 +1,5 @@
 #include "audio_engine.h"
+
 #include "godot_cpp/classes/audio_stream_generator.hpp"
 #include "godot_cpp/classes/audio_stream_playback.hpp"
 #include "godot_cpp/classes/audio_stream_player.hpp"
@@ -7,12 +8,13 @@
 #include "godot_cpp/core/object.hpp"
 #include "godot_cpp/core/print_string.hpp"
 #include "godot_cpp/core/property_info.hpp"
+#include "godot_cpp/templates/hash_map.hpp"
 #include "godot_cpp/variant/packed_float32_array.hpp"
+#include "godot_cpp/variant/string.hpp"
 #include "godot_cpp/variant/variant.hpp"
 #include "godot_cpp/variant/vector2.hpp"
 #include "module_node.h"
 
-namespace godot {
 
 const float SAMPLE_RATE = 44100.0;
 const int BUFFER_SIZE = 512;
@@ -82,6 +84,9 @@ PackedFloat32Array CAudioEngine::_process_node(CModuleNode* node, int num_sample
 	output.resize(num_samples);
 	if (node == nullptr) return output;
 	return output;
+
+	HashMap<int, PackedFloat32Array> inputs = HashMap<int, PackedFloat32Array>();
+
 }
 
 CGraphEditor *CAudioEngine::get_graph() {
@@ -106,6 +111,4 @@ CModuleNode *CAudioEngine::get_output_node() {
 
 void CAudioEngine::set_output_node(CModuleNode *module_node) {
 	output_node = module_node;
-}
-
 }

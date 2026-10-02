@@ -3,11 +3,11 @@
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
-#include "gdexample.h"
 #include "audio_engine.h"
 #include "module_node.h"
 #include "graph_editor.h"
 #include "nodes_panel.h"
+#include "resources/node_connection_resource.h"
 
 
 using namespace godot;
@@ -17,10 +17,10 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
+	GDREGISTER_CLASS(NodeConnectionResource)
 	GDREGISTER_RUNTIME_CLASS(CModuleNode);
 	GDREGISTER_RUNTIME_CLASS(CGraphEditor);
 	GDREGISTER_RUNTIME_CLASS(NodesPanel);
-	GDREGISTER_RUNTIME_CLASS(GDExample);
 	GDREGISTER_RUNTIME_CLASS(CAudioEngine);
 }
 

@@ -1,5 +1,5 @@
 extends Resource
-class_name NodeConnectionResource
+class_name CNodeConnectionResource
 
 enum InputType { WIRE, INT, FLOAT, ENUM }
 

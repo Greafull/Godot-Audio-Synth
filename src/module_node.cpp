@@ -1,12 +1,23 @@
 #include "module_node.h"
 #include "godot_cpp/variant/variant.hpp"
+#include "resources/node_connection_resource.h"
 
 void CModuleNode::_bind_methods() {
-	godot::ClassDB::bind_method(D_METHOD("print_type", "variant"), &CModuleNode::print_type);
+	ClassDB::bind_method(D_METHOD("input_count"), &CModuleNode::input_count);
 }
 
-void CModuleNode::print_type(const Variant &p_variant) const {
-	print_line(vformat("Type: %d", p_variant.get_type()));
+CModuleNode::CModuleNode() {
+	
+}
+
+int CModuleNode::input_count() const {
+	int i = 0;
+	for (Ref<NodeConnectionResource> connection: connections) {
+		if (connection->get_enable_left_port()) {
+			i++;
+		}
+	}
+	return i;
 }
 
 void CModuleNode::_ready() {

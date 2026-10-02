@@ -8,9 +8,8 @@
 #include "godot_cpp/variant/packed_float32_array.hpp"
 #include "graph_editor.h"
 #include "module_node.h"
-//#include "module_node.h"
 
-namespace godot {
+using namespace godot;
 
 class CAudioEngine : public Node {
 	GDCLASS(CAudioEngine, Node)
@@ -47,5 +46,3 @@ public:
 	CModuleNode *get_output_node();
 	void set_output_node(CModuleNode *module_node);
 };
-
-}
